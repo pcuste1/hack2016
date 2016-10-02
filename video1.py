@@ -13,7 +13,7 @@ a = []
 num = int(input())
 while(1):
     if (num == 1):
-        video = 'rain.avi'
+        video = 'night.avi'
     elif (num == 2):
         video = 'sun.avi'
     else:
