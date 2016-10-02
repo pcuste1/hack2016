@@ -51,7 +51,10 @@ def input_thread(a):
     elif (city == 'tornado'):
         a.append(city)
         return
-                
+    elif (city == 'earth'):
+        a.append(city)
+        return
+            
     #checks if the user input is in cities. if not, loops
     while city not in cities:
         print "Not a city, please try again."
