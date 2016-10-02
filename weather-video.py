@@ -6,30 +6,42 @@ import numpy as np
 import cv2
 import thread
 
+#This creates the cities repository that we use to determine latitude and longitude 
 f = open("city.txt", 'r')
 name = "name"
 cities = {}
 while(name != ''):
+    # each city in city.txt takes 3 lines worth of data. the first is the name followed by lat and long
     name = f.readline()
     if name != '':
         name = name.strip().split(',')
         cities[name[0].lower()] = [f.readline().strip(),f.readline().strip()]
 
+# This gets input from the user and then appends it to a list. Useful for threading
 def input_thread(a):
     #print cities
     city = 'houston'
-    city = raw_input("Please enter a city to look up (q to quit):").lower()
-    choice = 'base'
-    if city in cities:
-        api = "https://api.darksky.net/forecast/d4cfdd96bee79c0f28e2ac13b2ee1172/"+cities[city][0]+","+cities[city][1]
-        #print api
-        request = Request(api)
-        try:
-            response = urlopen(request)
-            weather = json.load(response)
-            choice = weather["currently"]["icon"]
-        except URLError, e:
-            print 'No kittez. Got an error code:', e
+    city = raw_input("Please enter a city to look up:").lower()
+    choice = ''
+    # for testing purposes
+    if city == 'rain':
+        a.append(city)
+        return
+    #checks if the user input is in cities. if not, loops
+    while city not in cities:
+        print "Not a city, please try again."
+        city = raw_input("Please enter a city to look up:").lower()
+    api = "https://api.darksky.net/forecast/d4cfdd96bee79c0f28e2ac13b2ee1172/"+cities[city][0]+","+cities[city][1]
+    #print api
+    # this gets the current weather condition in the chosen city
+    request = Request(api)
+    try:
+        response = urlopen(request)
+        weather = json.load(response)
+        choice = weather["currently"]["icon"]
+    except URLError, e:
+        print 'No kittez. Got an error code:', e
+    #appends the weather condition to list a. For a thread this breaks it out of the loop.
     a.append(choice)
     
 def main():
@@ -40,6 +52,7 @@ def main():
     input_thread(a)
     num = a[0]
     while(1):
+        # all the different video choices based on weather conditions
         if (num == 'rain'):
             video = 'rain.avi'
         elif (num == 'clear-day'):
@@ -52,6 +65,7 @@ def main():
         cap = cv2.VideoCapture(video)
         frame_counter = 0
         a = []
+        # starts a new input thread
         thread.start_new(input_thread, (a,))
         while(cap.isOpened() and a == []):
             ret, frame = cap.read()
