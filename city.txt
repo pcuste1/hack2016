@@ -400,7 +400,7 @@ Amsterdam, Netherlands
 Ankara, Turkey
 39.55
 32.55
-AsunciÃ³n, Paraguay
+Asunción, Paraguay
 -25.15
 -57.40
 Athens, Greece
@@ -418,7 +418,7 @@ Barcelona, Spain
 Beijing, China
 39.55
 116.25
-BelÃ©m, Brazil
+Belém, Brazil
 -1.28
 -48.29
 Belfast, Northern Ireland
@@ -433,7 +433,7 @@ Berlin, Germany
 Birmingham, England
 52.25
 -1.55
-BogotÃ¡, Colombia
+Bogotá, Colombia
 4.32
 -74.15
 Bombay, India
@@ -490,7 +490,7 @@ Chongqing, China
 Copenhagen, Denmark
 55.40
 12.34
-CÃ³rdoba, Argentina
+Córdoba, Argentina
 -31.28
 -64.10
 Dakar, Senegal
@@ -598,7 +598,7 @@ Manila, Philippines
 Marseilles, France
 43.20
 5.20
-MazatlÃ¡n, Mexico
+Mazatlán, Mexico
 23.12
 -106.25
 Mecca, Saudi Arabia
@@ -676,7 +676,7 @@ Prague, Czech Republic
 Rangoon, Myanmar
 16.50
 96.0
-ReykjavÃ­k, Iceland
+Reykjavík, Iceland
 64.4
 -21.58
 Rio de Janeiro, Brazil
@@ -694,7 +694,7 @@ Santiago, Chile
 St. Petersburg, Russia
 59.56
 30.18
-SÃ£o Paulo, Brazil
+São Paulo, Brazil
 -23.31
 -46.31
 Shanghai, China
@@ -742,6 +742,6 @@ Warsaw, Poland
 Wellington, New Zealand
 -41.17
 174.47
-ZÃ¼rich, Switzerland
+Zürich, Switzerland
 47.21
 8.31
